@@ -1,0 +1,223 @@
+[{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd55"
+  },
+  "name": "Shampoo",
+  "description": "Moisturizing and nourishing for all hair types",
+  "qyt": 25,
+  "price": 35000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd56"
+  },
+  "name": "Conditioner",
+  "description": "Smooths and detangles hair",
+  "qyt": 30,
+  "price": 40000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd57"
+  },
+  "name": "Body Wash",
+  "description": "Refreshing with natural extracts",
+  "qyt": 20,
+  "price": 28000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd58"
+  },
+  "name": "Face Cream",
+  "description": "Hydrating and anti-aging formula",
+  "qyt": 15,
+  "price": 60000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd59"
+  },
+  "name": "Hand Sanitizer",
+  "description": "Kills 99.9% of germs",
+  "qyt": 50,
+  "price": 15000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5a"
+  },
+  "name": "Toothpaste",
+  "description": "Fluoride protection for strong teeth",
+  "qyt": 40,
+  "price": 18000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5b"
+  },
+  "name": "Mouthwash",
+  "description": "Fresh breath and healthy gums",
+  "qyt": 35,
+  "price": 25000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5c"
+  },
+  "name": "Deodorant",
+  "description": "Long-lasting odor protection",
+  "qyt": 45,
+  "price": 22000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5d"
+  },
+  "name": "Hair Gel",
+  "description": "Strong hold and natural shine",
+  "qyt": 25,
+  "price": 30000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5e"
+  },
+  "name": "Shaving Cream",
+  "description": "Smooth and comfortable shave",
+  "qyt": 20,
+  "price": 27000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd5f"
+  },
+  "name": "Lip Balm",
+  "description": "Moisturizes and protects lips",
+  "qyt": 30,
+  "price": 12000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd60"
+  },
+  "name": "Body Lotion",
+  "description": "Hydrating for soft skin",
+  "qyt": 22,
+  "price": 35000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd61"
+  },
+  "name": "Sunscreen",
+  "description": "SPF 50+ protection",
+  "qyt": 18,
+  "price": 45000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd62"
+  },
+  "name": "Aloe Vera Gel",
+  "description": "Soothes and heals skin",
+  "qyt": 28,
+  "price": 30000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd63"
+  },
+  "name": "Face Mask",
+  "description": "Deep cleansing and detoxifying",
+  "qyt": 25,
+  "price": 38000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd64"
+  },
+  "name": "Hair Serum",
+  "description": "Nourishes and strengthens hair",
+  "qyt": 30,
+  "price": 50000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd65"
+  },
+  "name": "Essential Oils",
+  "description": "Relaxing and aromatic",
+  "qyt": 15,
+  "price": 42000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd66"
+  },
+  "name": "Bath Bombs",
+  "description": "Fragrant and fizzy bath experience",
+  "qyt": 40,
+  "price": 25000,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd67"
+  },
+  "name": "Nail Polish",
+  "description": "Long-lasting and vibrant colors",
+  "qyt": 35,
+  "price": 20000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd68"
+  },
+  "name": "Foot Cream",
+  "description": "Softens and refreshes tired feet",
+  "qyt": 22,
+  "price": 28000,
+  "available": true
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd69"
+  },
+  "name": "llvlleysam",
+  "description": "bego mashalah",
+  "price": 5000,
+  "qyt": 5,
+  "available": false
+},
+{
+  "_id": {
+    "$oid": "67c5b38bc50fad8c93c5cd6a"
+  },
+  "name": "ssssss New",
+  "description": "rest edit",
+  "price": 5000,
+  "qyt": 20,
+  "available": true,
+  "updatedAt": {
+    "$date": "2025-03-06T12:52:40.954Z"
+  }
+}]
