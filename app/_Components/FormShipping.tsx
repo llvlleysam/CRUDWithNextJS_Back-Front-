@@ -55,15 +55,15 @@ export default function FormShipping() {
               )}
             </label>
             <label className="flex flex-col items-start gap-2 relative">
-              country :
+              Address :
               <textarea
                 rows={4}
                 className="border w-full rounded-2xl bg-white/20 pl-4"
-                {...register("country")}
+                {...register("address")}
               />
-              {errors.country && (
+              {errors.address && (
                 <span className="text-white bg-red-500 rounded-full text-[8px] px-2 py-1 absolute top-4 right-0">
-                  {errors.country.message}
+                  {errors.address.message}
                 </span>
               )}
             </label>
@@ -81,15 +81,15 @@ export default function FormShipping() {
               )}
             </label>
             <label className="flex flex-col items-start gap-2 relative">
-              address :
+              country :
               <input
                 type="text"
                 className="border rounded-2xl bg-white/20 pl-4"
-                {...register("address")}
+                {...register("country")}
               />
-              {errors.address && (
+              {errors.country && (
                 <span className="text-white bg-red-500 rounded-full text-[8px] px-2 py-1 absolute top-4 right-0">
-                  {errors.address.message}
+                  {errors.country.message}
                 </span>
               )}
             </label>
