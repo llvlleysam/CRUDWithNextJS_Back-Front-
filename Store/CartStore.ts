@@ -1,5 +1,6 @@
 import { OrderModel } from "@/Models/Order";
 import { ProductModel } from "@/Models/Product";
+import { ShippingModel } from "@/Models/Shipping";
 import { create } from "zustand";
 
 
@@ -8,6 +9,7 @@ type TCart = {
   cartItems: OrderModel[];
   totalCount: number;
   totalPrice: number;
+  shippingAddress: ShippingModel | null;
 };
 
 // مقدار اولیه سبد خرید
@@ -15,6 +17,7 @@ const initial = {
   cartItems: [],
   totalCount: 0,
   totalPrice: 0,
+  shippingAddress: null,
 };
 
 // تعریف سبد خرید با پکیج Zustand
@@ -23,20 +26,21 @@ const cartStore = create<TCart>(() => initial);
 // تعریف متدهای سبد خرید یا همون custom hooks
 export default function useCartService() {
   // دریافت مقادیر سبد خرید از داخل zustand
-  const { cartItems, totalCount, totalPrice } = cartStore();
+  const { cartItems, totalCount, totalPrice , shippingAddress } = cartStore();
 
   // تعریف متدهای سبد خرید و return مقادیر آن
   return {
     cartItems,
     totalCount,
     totalPrice,
+    shippingAddress,
     AddToCart: (item: OrderModel) => {
       const exist = cartItems.find((c) => c._id === item._id);
       const updateCartItem = exist
         ? cartItems.map((c) =>
             c._id === item._id ? { ...c, purchased: exist.purchased + 1 } : c
           )
-        : [...cartItems, { ...item, purchased: 1 }];
+        : [...cartItems, { ...item, purchased: 1 , product: item._id}];
 
       const { totalCount, totalPrice } = updateCartInfo(updateCartItem);
       cartStore.setState({ cartItems: updateCartItem, totalCount, totalPrice });
@@ -58,6 +62,9 @@ export default function useCartService() {
     },
     clearCart: () => {
       cartStore.setState({ cartItems: [], totalCount: 0, totalPrice: 0 });
+    },
+    setShippingAddress: (shippingAddress: ShippingModel) => {
+      cartStore.setState({ shippingAddress });
     },
   };
 }
