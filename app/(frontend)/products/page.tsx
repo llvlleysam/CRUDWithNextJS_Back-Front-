@@ -1,5 +1,7 @@
 import CardProduct from "@/app/_Components/CardProduct";
 import SearchInput from "@/app/_Components/SearchInput";
+import SessionComponent from "@/app/_Components/SessionComponent";
+import { auth } from "@/app/lib/auth";
 import dbConnect from "@/db/db-connect";
 import ProductModelDB, { ProductModel } from "@/Models/Product";
 import { Metadata } from "next";
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductsPage({ searchParams }: { searchParams: { q?: string; available?: string } }) {
+  const session = await auth();
+  if (!session) {return <SessionComponent/>}
 	// دریافت تکی محصول نکته !!!!!!!! چون کامپوننت سرور ساید هست میتونیم مستقیم به دیتا بیس درخواست بزنیم و نیاز به فنچ نیست
   await dbConnect();
 	// مقادیر مربوط به سرچ که نکست در قالب یک پراپس در خدممتون میذاره

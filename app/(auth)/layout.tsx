@@ -1,5 +1,4 @@
-import Navbar from "@/app/_Components/Navbar";
-
+import NavbarAuth from "../_Components/NavbarAuth";
 
 export default function LayoutFrontend({
   children,
@@ -8,7 +7,7 @@ export default function LayoutFrontend({
 }>) {
   return (
     <>
-      <Navbar/>
+      <NavbarAuth/>
       {children}
     </>
   );

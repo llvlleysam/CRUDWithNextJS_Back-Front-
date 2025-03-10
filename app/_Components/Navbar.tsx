@@ -1,10 +1,28 @@
 "use client";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   // با استفاده از این هوک مینونیم مشخص کنیم که کجا هستیم داخل کدام صفحه
   const pathname = usePathname();
+  const [user, setUser] = useState(false);
+  useEffect(()=>{
+    if(!user){
+      setUser(JSON.parse(localStorage.getItem("isLogin")!));
+    }
+  },[])
+
+  async function logout() {
+    try {
+      await signOut({redirectTo:"/"});
+      localStorage.removeItem("isLogin");
+      setUser(false);
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div>
       <nav className="p-4">
@@ -53,6 +71,15 @@ export default function Navbar() {
               Add Product
             </Link>
           </li>
+          <li>
+            <Link
+              href="/login"
+              className={`${pathname === "/login" ? "text-red-500" : ""}`}
+            >
+              Login
+            </Link>
+          </li>
+          {user ? <button onClick={()=>logout()} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Logout</button> : ""}
         </menu>
       </nav>
     </div>
