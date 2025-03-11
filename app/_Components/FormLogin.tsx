@@ -3,7 +3,7 @@ import { UserModel } from "@/Models/User";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -15,6 +15,7 @@ const loginSchema = z.object({
 export default function FormLogin() {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
+  const ref = useRef<HTMLDivElement>(null);
   const {
     handleSubmit,
     register,
@@ -45,9 +46,9 @@ export default function FormLogin() {
     }
   };
   return (
-    <div className="p-4 flex items-center justify-center w-full h-screen">
+    <div className="p-4 flex flex-col items-center justify-center w-full h-screen">
       <form
-        className="flex flex-col gap-2 border rounded-2xl p-4"
+        className="flex flex-col gap-2 border rounded-2xl p-4  z-10"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-2xl font-bold">Login</h1>
@@ -85,6 +86,8 @@ export default function FormLogin() {
           Login
         </button>
       </form>
+        <p className="text-sm text-gray-500 flex gap-2 mt-2">Don't have an account ?<button className="text-gray-500 text-xs hover:text-blue-500" onClick={()=> router.push("/register")}>register</button></p>
+      
     </div>
   );
 }
