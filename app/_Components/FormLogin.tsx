@@ -43,22 +43,6 @@ export default function FormLogin() {
        router.push("/products"); 
        localStorage.setItem("isLogin", true.toString());
     }
-    // const user = {username: data.username, password: data.password,name : "meysam", email: "mmm@gmail.com",role: "admin" }
-    // try {
-    //   const res = await fetch("/api/user", {
-    //     method: "GET",
-    //     body: JSON.stringify(data),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   console.log(res)
-    // } catch (error) {
-    //   console.log(error)
-    // }
-    // console.log(data);
-    // console.log(res);
-    // reset();
   };
   return (
     <div className="p-4 flex items-center justify-center w-full h-screen">

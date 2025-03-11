@@ -13,7 +13,7 @@ export default function NavbarAuth() {
                     <Link href="/login" className={`${pathname === "/login" ? "text-red-500" : ""}`}>Login</Link>
                 </li>
                 <li>
-                    <Link href="/singIn" className={`${pathname === "/singIn" ? "text-red-500" : ""}`}>SingIn</Link>
+                    <Link href="/register" className={`${pathname === "/register" ? "text-red-500" : ""}`}>Register</Link>
                 </li>
                 <li>
                     <Link href="/" className={`${pathname === "/" ? "text-red-500" : ""}`}>Home</Link>
