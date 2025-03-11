@@ -8,11 +8,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      <h1>Home page</h1>
+    <div className="p-4">
       <Suspense fallback={<div>Loading...</div>}>
         <WeatherChart />
       </Suspense>
-    </>
+    </div>
   );
 }
