@@ -32,7 +32,7 @@ export default function FormLogin() {
 
   const onSubmit = async (data: UserModel) => {
     setErrorMessage("");
-    
+
     const res = await signIn("credentials", {
       username: data.username,
       password: data.password,
@@ -42,8 +42,8 @@ export default function FormLogin() {
       setErrorMessage("User not found OR Invalid password");
     } else {
       reset();
-       router.push("/products"); 
-       localStorage.setItem("isLogin", true.toString());
+      router.push("/products");
+      localStorage.setItem("isLogin", true.toString());
     }
   };
   return (
@@ -79,7 +79,9 @@ export default function FormLogin() {
             </p>
           )}
         </label>
-        {errorMessage && <span className="text-red-500 text-[12px]">{errorMessage}</span>}
+        {errorMessage && (
+          <span className="text-red-500 text-[12px]">{errorMessage}</span>
+        )}
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -89,13 +91,28 @@ export default function FormLogin() {
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center gap-2"
-          onClick={async ()=>{await signIn("github",{redirectTo:"/products"})}}
+          onClick={async () => {
+            const res = await signIn("github", { redirectTo: "/products" });
+            if (res?.error) {
+              setErrorMessage("User not found OR Invalid password");
+            } else {
+              reset();
+              localStorage.setItem("isLogin", true.toString());
+            }
+          }}
         >
-          <FaGithub /> Github 
+          <FaGithub /> Github
         </button>
       </form>
-        <p className="text-sm text-gray-500 flex gap-2 mt-2">Don't have an account ?<button className="text-gray-500 text-xs hover:text-blue-500" onClick={()=> router.push("/register")}>register</button></p>
-      
+      <p className="text-sm text-gray-500 flex gap-2 mt-2">
+        Don't have an account ?
+        <button
+          className="text-gray-500 text-xs hover:text-blue-500"
+          onClick={() => router.push("/register")}
+        >
+          register
+        </button>
+      </p>
     </div>
   );
 }
