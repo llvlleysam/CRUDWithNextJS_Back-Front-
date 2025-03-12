@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import dbConnect from "@/db/db-connect";
 import UserModelDB from "@/Models/User";
+import GitHub from "next-auth/providers/github";
 
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -30,6 +31,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           throw new Error("User not found OR Invalid password")
         }
       }
+    }),
+    GitHub({
+      clientId: process.env.AUTH_GITHUB_ID,
+      clientSecret: process.env.AUTH_GITHUB_SECRET
     })
   ],
+  pages:{
+    signIn:"/login"
+  }
 })

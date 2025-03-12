@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { FaGithub } from "react-icons/fa";
 
 const loginSchema = z.object({
   username: z.string().min(3).max(50),
@@ -84,6 +85,13 @@ export default function FormLogin() {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Login
+        </button>
+        <button
+          type="button"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center gap-2"
+          onClick={async ()=>{await signIn("github",{redirectTo:"/products"})}}
+        >
+          <FaGithub /> Github 
         </button>
       </form>
         <p className="text-sm text-gray-500 flex gap-2 mt-2">Don't have an account ?<button className="text-gray-500 text-xs hover:text-blue-500" onClick={()=> router.push("/register")}>register</button></p>
